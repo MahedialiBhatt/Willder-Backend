@@ -1,7 +1,9 @@
 {
   "projects": {
     "default": "",
-    "dev": "",
+    "dev": "dev1-25026",
     "prod": ""
-  }
+  },
+  "targets": {},
+  "etags": {}
 }
