@@ -1,16 +1,16 @@
-import { firestore } from 'firebase-admin';
-import admin from 'firebase-admin';
+import { ServiceAccount, initializeApp } from 'firebase-admin/app';
 
-import devConfig from './serviceAccounts/firebase-dev';
-import prodConfig from './serviceAccounts/firebase-prod';
+import devConfig from './serviceAccounts/firebase-dev.json';
+import prodConfig from './serviceAccounts/firebase-prod.json';
+import { auth, credential, firestore } from 'firebase-admin';
 
 const config = process.env.NODE_ENV === 'production' ? prodConfig : devConfig;
 
-admin.initializeApp({
-  credential: admin.credential.cert(config),
+initializeApp({
+  credential: credential.cert(<ServiceAccount>config),
 });
 
 const db = firestore();
-const adminauth = admin.auth();
+const adminauth = auth();
 
 export { db, adminauth };
