@@ -1,7 +1,7 @@
 {
   "name": "functions",
   "scripts": {
-    "lint": "eslint --ext .js,.ts .",
+    "lint": "eslint --ext .js,.ts . --fix",
     "build": "tsc",
     "build:watch": "tsc --watch",
     "serve:dev": "firebase use dev && yarn build && IS_LOCAL=1 firebase emulators:start --only functions",
@@ -10,7 +10,8 @@
     "start": "npm run shell",
     "deploy:dev": "firebase use dev && yarn build  && firebase deploy --only functions --debug",
     "deploy:prod": "firebase use prod && yarn build  && firebase deploy --only functions --debug",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "format": "prettier --write \"src/**/*.ts\" "
   },
   "engines": {
     "node": "18"
@@ -36,6 +37,7 @@
     "generate-password": "1.7.0",
     "jsonwebtoken": "9.0.0",
     "lodash": "4.17.21",
+    "prettier": "^3.0.2",
     "randomstring": "1.3.0",
     "stripe": "12.10.0",
     "stripe-event-types": "2.3.0",
@@ -51,7 +53,9 @@
     "@types/swagger-ui-express": "4.1.3",
     "@types/uuid": "9.0.2",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
-    "@typescript-eslint/parser": "^5.12.0"
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0"
   },
   "private": true
 }
