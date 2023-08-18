@@ -1,13 +1,13 @@
 import dayjs from 'dayjs';
 
 export const getCurrentJST = () => {
-  // TODO format must be 'YYYY-MM-DD HH:mm:ss'
+  return dayjs().format('YYYY-MM-DD HH:mm:ss');
 };
 
 export const getAddToCurrentJST = (num: number, unit: dayjs.ManipulateType) => {
-  // TODO
+  return dayjs().add(num, unit).format('YYYY-MM-DD HH:mm:ss');
 };
 
 export const isAfterCurrentJST = (time: string) => {
-  // TODO
+  return dayjs(time).isAfter(dayjs());
 };

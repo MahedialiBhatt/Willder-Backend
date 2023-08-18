@@ -1,3 +1,4 @@
+import * as jwt from 'jsonwebtoken';
 import { badImplementationException } from './apiErrorHandler';
 
 export const encodeJwt = (
@@ -14,9 +15,8 @@ export const encodeJwt = (
         : process.env.JWT_SECRET;
     if (!SECRET) throw badImplementationException('SECRET is not defined on env file');
 
-    // TODO
-
-    return;
+    const token = jwt.sign(payload, SECRET, { expiresIn });
+    return token;
   } catch (err: any) {
     throw err;
   }
@@ -32,9 +32,8 @@ export const decodeJwt = (jwtoken: string, secret: 'refresh' | 'access' | 'defau
         : process.env.JWT_SECRET;
     if (!SECRET) throw badImplementationException('SECRET is not defined on env file');
 
-    // TODO
-
-    return;
+    const decoded = jwt.verify(jwtoken, SECRET);
+    return decoded;
   } catch (err: any) {
     throw err;
   }
