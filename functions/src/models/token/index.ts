@@ -19,7 +19,7 @@ export const addToken = async (token: TokenDocument) => {
   try {
     const docRef = db.collection(COLLECTION_KEY).doc(token.token_id).withConverter(converter);
     await docRef.set(token, { merge: true });
-    return Promise.resolve();
+    return Promise.resolve('Token added successfully');
   } catch (err) {
     return Promise.reject(err);
   }
@@ -29,7 +29,7 @@ export const deleteToken = async (id: string) => {
   try {
     const docRef = db.collection(COLLECTION_KEY).doc(id).withConverter(converter);
     await docRef.delete();
-    return Promise.resolve();
+    return Promise.resolve('Token deleted successfully');
   } catch (err) {
     return Promise.reject(err);
   }
