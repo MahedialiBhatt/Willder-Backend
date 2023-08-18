@@ -1,5 +1,4 @@
-import express from 'express';
-import { Request, Response, NextFunction } from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import { HttpException } from '../utils/apiErrorHandler';
 
 export const errorHandler = (app: express.Application) => {
