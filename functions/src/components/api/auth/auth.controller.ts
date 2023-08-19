@@ -41,7 +41,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
 
     await updateUserFields(user[0].user_id, { refresh_token: refreshToken, updated_at: getCurrentJST() });
     const tokenToFirebase: TokenDocument = {
-      token_id: refreshToken,
+      token_id: accessToken,
       user_id: user[0].user_id,
       token_type: 'resetPassword',
       user_type: 'user',

@@ -9,11 +9,17 @@ export const isAuth = async (req: Request, res: Response, next: NextFunction) =>
     const bearer = req.headers['authorization'];
     if (!bearer) throw unauthorizedException('No token provided');
 
-    const decodedToken = decodeJwt(bearer, 'access');
+    const token = bearer.split(' ')[1];
+
+    const decodedToken = decodeJwt(token, 'access');
+
     if (typeof decodedToken === 'string') throw unauthorizedException('Invalid token');
-    const getTokenFromDb = await getToken(bearer);
+
+    const getTokenFromDb = await getToken(token);
+
     if (!getTokenFromDb) throw unauthorizedException('Invalid token');
-    if (getTokenFromDb.token_id !== bearer) throw unauthorizedException('Invalid token');
+    if (getTokenFromDb.token_id !== token) throw unauthorizedException('Invalid token');
+
     req.user = { user_id: decodedToken.id, name: getTokenFromDb.user_type };
     next();
   } catch (err) {
