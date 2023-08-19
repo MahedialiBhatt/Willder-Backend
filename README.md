@@ -33,7 +33,7 @@ Follow these steps to set up and run the project:
 ## API Endpoints
 
  - API Structure - localhost:5001/project-id/asia-northeast1/api
- - All APIs collection available in dev/postman/ folder
+ - All APIs collection available in dev-helper/postman/ folder
  - Ex. Base_url + endpoint
 
 | Endpoint                         | Method | Description                            |

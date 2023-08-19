@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "8f285734-9e9b-4ce0-8640-8113d5e0f65b",
+		"name": "Willder's API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16990131"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"johnhello009@gmail.com\",\n    \"password\": \"John@12345\",\n    \"name\": \"John hello\",\n    \"phone\": \"1234567890\",\n    \"address\": \"Mumbai, MH\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5001/dev1-25026/asia-northeast1/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"dev1-25026",
+						"asia-northeast1",
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"johnhello009@gmail.com\",\n    \"password\": \"John@123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/dev1-25026/asia-northeast1/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"dev1-25026",
+						"asia-northeast1",
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGOUT",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRkOWNjNDkxLWE1MzMtNGM0MC04Mjk4LWQ4NzYzZTkxMmYwMyIsImlhdCI6MTY5MjQzNTQ4NiwiZXhwIjoxNjkyNDQyNjg2fQ.Y22p4tBo6R5hVOl3VmjZ7tbkuA1K56ionkvwnIW2Tro",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRkOWNjNDkxLWE1MzMtNGM0MC04Mjk4LWQ4NzYzZTkxMmYwMyIsImlhdCI6MTY5MjQzMzg3NywiZXhwIjoxNjkyNDQxMDc3fQ.x9CuzCNueCFCfrYvEnWA0fxZ0whmUVBNYXrOphNxGxQ",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5001/dev1-25026/asia-northeast1/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"dev1-25026",
+						"asia-northeast1",
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"johnhello009@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/dev1-25026/asia-northeast1/api/auth/password/forgot",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"dev1-25026",
+						"asia-northeast1",
+						"api",
+						"auth",
+						"password",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRkOWNjNDkxLWE1MzMtNGM0MC04Mjk4LWQ4NzYzZTkxMmYwMyIsImlhdCI6MTY5MjQ3MjAxNSwiZXhwIjoxNjkyNDc5MjE1fQ.uEK0DXayy_NitehlPZahA_4bzJAO_K5mOena86IyILI\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/dev1-25026/asia-northeast1/api/auth/refresh",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"dev1-25026",
+						"asia-northeast1",
+						"api",
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRkOWNjNDkxLWE1MzMtNGM0MC04Mjk4LWQ4NzYzZTkxMmYwMyIsImlhdCI6MTY5MjQ3MjIxNiwiZXhwIjoxNjkyNDc5NDE2fQ.7JWIaRO5Ix955FhHf7DqOCqh4RIyxqZ5xceAwVIHt0I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"name\": \"John hello 2\",\n        \"phone\": \"1122334455\",\n        \"address\": \"Pune\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/dev1-25026/asia-northeast1/api/account/updateaccount",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"dev1-25026",
+						"asia-northeast1",
+						"api",
+						"account",
+						"updateaccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get account info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRkOWNjNDkxLWE1MzMtNGM0MC04Mjk4LWQ4NzYzZTkxMmYwMyIsImlhdCI6MTY5MjQ3MjIxNiwiZXhwIjoxNjkyNDc5NDE2fQ.7JWIaRO5Ix955FhHf7DqOCqh4RIyxqZ5xceAwVIHt0I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5001/dev1-25026/asia-northeast1/api/account/getaccountinfo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"dev1-25026",
+						"asia-northeast1",
+						"api",
+						"account",
+						"getaccountinfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRkOWNjNDkxLWE1MzMtNGM0MC04Mjk4LWQ4NzYzZTkxMmYwMyIsImlhdCI6MTY5MjQ3MjIxNiwiZXhwIjoxNjkyNDc5NDE2fQ.7JWIaRO5Ix955FhHf7DqOCqh4RIyxqZ5xceAwVIHt0I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\":\"John@123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/dev1-25026/asia-northeast1/api/account/password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"dev1-25026",
+						"asia-northeast1",
+						"api",
+						"account",
+						"password"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
